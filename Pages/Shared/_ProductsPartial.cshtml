@@ -5,9 +5,14 @@
     {
         <div class="col-md-4 mb-4">
             <div class="card">
+                <img src="@product.img" class="card-img-top" alt="@product.Title"> 
                 <div class="card-body">
-                    <h5 class="card-title">@product.Name</h5>
+                    <h5 class="card-title">@product.Title</h5>
                     <p class="card-text">@product.Description</p>
+                    @if (!string.IsNullOrEmpty(product.Url))
+                    {
+                        <p class="card-text"><a href="@product.Url" target="_blank">Learn more</a></p> 
+                    }
                 </div>
             </div>
         </div>

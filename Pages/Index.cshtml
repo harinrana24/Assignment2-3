@@ -8,23 +8,15 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
-    <div class="row"> 
-        @foreach (var product in Model.Products)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">@product.Name</h5>
-                        <p class="card-text">@product.Description</p>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
+  
 
+    @await Html.PartialAsync("_ProductsPartial", Model.Products)
+i
     <ul class="navbar-nav">
         <li class="nav-item">
             @Html.ActionLink("Product List", "ProductList", "ControllerName")
+
+           
         </li>
     </ul>
 </div>
